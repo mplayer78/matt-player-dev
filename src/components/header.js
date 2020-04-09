@@ -1,42 +1,37 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
+import MattPlayerText from "./mattplayerText"
+import { HeaderBar } from "./mattplayerText"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const StyledHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+`
+
+const PageName = styled(HeaderBar)`
+  color: #828282;
+`
+
+const Header = data => {
+  console.log("data", data)
+  return (
+    <StyledHeader>
+      <MattPlayerText />
+      <PageName>{data.pageTitle}</PageName>
+    </StyledHeader>
+  )
+}
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  // data.siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  // siteTitle: ``,
 }
 
 export default Header
