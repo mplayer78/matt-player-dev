@@ -8,7 +8,7 @@ description: "React Hooks demo utilising useContext, useEffect and useState to m
 Rigged so that the computer always wins! "
 imgSrc: ""
 githubURL: "https://github.com/mplayer78/nimbot-3000"
-depolyedURL: "https://www.mattplayer.dev/"
+depolyedURL: "https://nimbot3000.netlify.com/"
 ---
 
 # h1 Heading 8-)
