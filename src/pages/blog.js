@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import BlogLink from "../components/blogLink"
 import styled from "styled-components"
 import Layout from "../components/layout"
@@ -17,13 +17,15 @@ const BlogPage = (
   },
   props
 ) => {
-  console.log("edges", props)
+  console.log("edges", edges)
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <BlogLink key={edge.node.id} post={edge.node} />)
   return (
     <Layout uri={props.uri}>
-      <BlogContainer>{Posts}</BlogContainer>
+      <BlogContainer>
+        <Link>{Posts}</Link>
+      </BlogContainer>
     </Layout>
   )
 }

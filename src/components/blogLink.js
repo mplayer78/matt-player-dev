@@ -1,28 +1,48 @@
 import React from "react"
 import styled from "styled-components"
+import {
+  StyledSubHeading,
+  StyledHeading,
+  StyledExcerpt,
+} from "../styling/typography"
+import { Link } from "gatsby"
 
-const StyledLinkDiv = styled.button`
+const StyledLink = styled.div`
   border: none;
+  border-bottom: #828282 solid 2px;
+  background: green;
+  padding: 50px 0px;
   display: flex;
   flex: 1;
   width: 100%;
   justify-content: space-between;
-  border: solid red 2px;
   align-items: center;
+  background: none;
+  text-decoration: none;
 `
 
-const StyledHeading = styled.h1`
-  padding: 50 0;
-  margin: 0;
+const DateBox = styled.div`
+  flex: 1;
+  font-weight: 400;
 `
 
-const BlogLink = ({ post }) => {
-  const { frontmatter } = post
+const ContentBox = styled.div`
+  flex: 4;
+`
+
+const BlogLink = ({ post, ...props }) => {
+  const { frontmatter, excerpt } = post
+  console.log("post", post)
   return (
-    <StyledLinkDiv className="blogLink">
-      <StyledHeading>{frontmatter.date}</StyledHeading>
-      <StyledHeading>{frontmatter.title}</StyledHeading>
-    </StyledLinkDiv>
+    <StyledLink>
+      <DateBox>
+        <StyledSubHeading>{frontmatter.date}</StyledSubHeading>
+      </DateBox>
+      <ContentBox>
+        <StyledHeading>{frontmatter.title}</StyledHeading>
+        <StyledExcerpt>{excerpt}</StyledExcerpt>
+      </ContentBox>
+    </StyledLink>
   )
 }
 
