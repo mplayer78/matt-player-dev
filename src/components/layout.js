@@ -13,7 +13,7 @@ import Header from "./header"
 import "./layout.css"
 import { GlobalStyle } from "./indexLayout"
 
-const Layout = ({ children, uri }) => {
+const Layout = ({ children, uri, ...props }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,11 +23,12 @@ const Layout = ({ children, uri }) => {
       }
     }
   `)
+  console.log("props", data)
 
   return (
     <>
       <GlobalStyle />
-      <Header pageTitle={/\w*$/g.exec(uri)[0]} />
+      <Header {...props} />
       <div
         style={{
           margin: `0 auto`,

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import BlogLink from "../components/blogLink"
 import styled from "styled-components"
 import Layout from "../components/layout"
@@ -23,7 +23,9 @@ const BlogPage = (
     .map(edge => <BlogLink key={edge.node.id} post={edge.node} />)
   return (
     <Layout uri={props.uri}>
-      <BlogContainer>{Posts}</BlogContainer>
+      <BlogContainer>
+        <Link>{Posts}</Link>
+      </BlogContainer>
     </Layout>
   )
 }

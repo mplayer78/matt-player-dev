@@ -1,7 +1,7 @@
 ---
 path: "/blog/navigating-from-the-topbar-with-react-navigation-5"
 category: "blog"
-date: "2019-05-04"
+date: "2020-05-04"
 title: "Navigating from the top-bar in Expo using React Navigation 5"
 imgSrc: "../images/nimbot-3000.png"
 ---

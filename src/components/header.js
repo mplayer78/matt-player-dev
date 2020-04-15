@@ -16,15 +16,22 @@ const PageName = styled(HeaderBar)`
   color: #828282;
 `
 
-const Header = data => {
-  console.log("data", data)
+const Header = props => {
   return (
     <StyledHeader>
       <MattPlayerText />
-      <PageName>{data.pageTitle}</PageName>
+      <PageName>{props.page}</PageName>
     </StyledHeader>
   )
 }
+
+export const pageQuery = graphql`
+  query {
+    sitePage {
+      path
+    }
+  }
+`
 
 Header.propTypes = {
   // data.siteTitle: PropTypes.string,
