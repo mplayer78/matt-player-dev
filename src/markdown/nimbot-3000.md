@@ -1,7 +1,7 @@
 ---
 path: "/projects/nimbot-3000"
 category: "project"
-date: "2019-08-04"
+date: "2020-04-08"
 title: "Nimbot 3000"
 description: "React Hooks demo utilising useContext, useEffect and useState to manage state between screens. 
 

@@ -31,9 +31,6 @@ export const pageQuery = graphql`
             path
             title
             description
-            imgSrc {
-              relativePath
-            }
             githubURL
             depolyedURL
           }

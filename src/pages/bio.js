@@ -14,11 +14,32 @@ const Bio = ({ data }) => {
         <meta charSet="utf-8" />
         <title>bio</title>
       </Helmet>
-      {edges.map(({ node }) => {
-        console.log("node", node.excerpt)
-        return <h1>Hello</h1>
-      })}
-      <h1>Hello</h1>
+      <h3>About Me</h3>
+      <br />
+      <p>
+        I’m a software developer from Southwest England where I live with my
+        wife & two children. I am proficient in <strong>Javascript</strong>(
+        <strong>Node.js</strong> + Client-side), UI frameworks (
+        <strong>React</strong>, <strong>Svelte</strong>),
+        <strong>Python</strong>, <strong>Java</strong>, <strong>Rust</strong>.
+      </p>
+      <br />
+      <p>
+        I have 20 years experience in Retail Management running an independent
+        trade store. Within that role I handled day to day liason with retail
+        and trade customers so am used to communicating with clients of varying
+        levels of technical knowledge.
+      </p>
+      <br />
+      <p>
+        I also assist with the _Digital Devon scheme_, providing an IT support
+        service to members of the East Devon community.
+      </p>
+      <br />
+      <p>
+        In my spare time I am a keen Triathlete and Sailor. I also do coding
+        puzzles & games. (Advent of Code, Codewars, etc)
+      </p>
     </Layout>
   )
 }
