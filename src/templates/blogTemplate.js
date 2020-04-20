@@ -6,9 +6,10 @@ import { StyledHeading, StyledSubHeading } from "../styling/typography"
 import Img from "gatsby-image"
 
 const ImageContainer = styled.div`
-  color: red;
-  border: dashed purple 2px;
   flex: 1;
+  @media (max-width: 700px) {
+    flex: 0;
+  }
 `
 
 const BlogContainer = styled.div`
@@ -16,9 +17,7 @@ const BlogContainer = styled.div`
 `
 
 const BlogPost = styled.div`
-  border: solid green 2px;
   flex: 4;
-  padding-left: 100px;
 `
 
 const BlogBody = styled.div`
@@ -31,21 +30,6 @@ export default function Template({
   console.log("data", data)
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  // const imgData = useStaticQuery(graphql`
-  //   query ImgQuery {
-  //     file(relativePath: { in: "nimbot" }, childImageSharp: { fluid: {} }) {
-  //       childImageSharp {
-  //         fluid {
-  //           aspectRatio
-  //           base64
-  //           sizes
-  //           src
-  //           srcSet
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
 
   return (
     <Layout>
