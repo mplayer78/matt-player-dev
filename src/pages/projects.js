@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import BlogLink from "../components/blogLink"
+import ProjectLink from "../components/projectLink"
 
 const Projects = ({ data }) => {
   const {
@@ -9,7 +9,7 @@ const Projects = ({ data }) => {
   return (
     <Layout>
       {projects.map(({ node }) => (
-        <BlogLink key={node.id} post={node} />
+        <ProjectLink key={node.id} post={node} />
       ))}
     </Layout>
   )
@@ -30,6 +30,12 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             title
+            description
+            imgSrc {
+              relativePath
+            }
+            githubURL
+            depolyedURL
           }
         }
       }

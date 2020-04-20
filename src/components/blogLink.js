@@ -7,7 +7,7 @@ import {
 } from "../styling/typography"
 import { Link } from "gatsby"
 
-const StyledLink = styled.div`
+const StyledLink = styled(Link)`
   border: none;
   border-bottom: #828282 solid 2px;
   background: green;
@@ -34,7 +34,7 @@ const BlogLink = ({ post, ...props }) => {
   const { frontmatter, excerpt } = post
   console.log("post", post)
   return (
-    <StyledLink>
+    <StyledLink to={frontmatter.path}>
       <DateBox>
         <StyledSubHeading>{frontmatter.date}</StyledSubHeading>
       </DateBox>
