@@ -6,23 +6,33 @@ const Contact = props => {
     <Layout uri={props.uri}>
       <h3>Contact Form</h3>
       <form name="contact" method="POST" data-netlify="true">
-        <label>
-          Name:
-          <input type="text" />
-        </label>
-        <label>
-          email:
-          <input type="text" />
-        </label>
-        <label>
-          message:
-          <textarea />
-        </label>
-        <label>
-          Phone Number:
-          <input type="text" />
-        </label>
-        <button type="submit">Submit</button>
+        <p>
+          <label>
+            Your Name: <input type="text" name="name" />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Email: <input type="email" name="email" />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Role:{" "}
+            <select name="role[]" multiple>
+              <option value="leader">Leader</option>
+              <option value="follower">Follower</option>
+            </select>
+          </label>
+        </p>
+        <p>
+          <label>
+            Message: <textarea name="message"></textarea>
+          </label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
       </form>
     </Layout>
   )
